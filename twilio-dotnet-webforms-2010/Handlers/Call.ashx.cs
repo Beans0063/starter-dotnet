@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,7 +19,7 @@ namespace twilio_dotnet.Handlers
 
             client = new TwilioRestClient(Settings.AccountSid, Settings.AuthToken);
 
-            var result = client.InitiateOutboundCall(Settings.TwilioNumber, context.Request["to"], "http://twimlets.com/message?Message%5B0%5D=http://demo.kevinwhinnery.com/audio/zelda.mp3");
+            var result = client.InitiateOutboundCall(Settings.TwilioNumber, context.Request["to"], "http://twilio-elearning.herokuapp.com/starter/voice.php");
 
             if (result.RestException != null)
             {

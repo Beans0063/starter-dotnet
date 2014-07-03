@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -36,7 +36,7 @@ namespace twilio_dotnet.Controllers
         {
             client = new TwilioRestClient(Settings.AccountSid, Settings.AuthToken);
 
-            var result = client.InitiateOutboundCall(Settings.TwilioNumber, to, "http://twimlets.com/message?Message%5B0%5D=http://demo.kevinwhinnery.com/audio/zelda.mp3");
+            var result = client.InitiateOutboundCall(Settings.TwilioNumber, to, "http://twilio-elearning.herokuapp.com/starter/voice.php");
 
             if (result.RestException != null)
             {
@@ -50,7 +50,7 @@ namespace twilio_dotnet.Controllers
         {
             var response = new TwilioResponse();
             response.Say("Hello there! You have successfully configured a web hook.");
-            response.Say("Good luck on your Twilio quest!", new { Voice = "woman" });
+            response.Say("Have fun with your Twilio development!", new { Voice = "woman" });
             return TwiML(response);
         }
     }
