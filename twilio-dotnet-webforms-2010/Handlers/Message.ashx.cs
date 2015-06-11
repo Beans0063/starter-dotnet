@@ -19,7 +19,7 @@ namespace twilio_dotnet.Handlers
 
             client = new TwilioRestClient(Settings.AccountSid, Settings.AuthToken);
 
-            var result = client.SendSmsMessage(Settings.TwilioNumber, context.Request["to"], "Hello there! Your Twilio environment has been configured.");
+            var result = client.SendMessage(Settings.TwilioNumber, context.Request["to"], "Hello there! Your Twilio environment has been configured.");
 
             if (result.RestException != null)
             {
